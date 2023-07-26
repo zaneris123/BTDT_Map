@@ -1,0 +1,6 @@
+{
+  "appTitle": "btdt",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
