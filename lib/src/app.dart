@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
     super.key,
     required this.settingsController,
   });
-
   final SettingsController settingsController;
 
   @override
