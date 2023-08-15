@@ -27,10 +27,16 @@ class _MapViewState extends State<MapView>{
       _error = null;
     });
     try {
+      location.enableBackgroundMode(enable: true);
       final locationResult = await location.getLocation();
       setState(() {
         currentLocation = LatLng(locationResult.latitude!, locationResult.longitude!);
         _loadingLocation = false;
+      });
+      location.onLocationChanged.listen((event) {
+        setState(() {
+          currentLocation = LatLng(event.latitude!, event.longitude!);
+        });
       });
     } on PlatformException catch (err) {
       setState(() {
