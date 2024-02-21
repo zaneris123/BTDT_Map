@@ -28,9 +28,9 @@ class _MapViewState extends State<MapView>{
     });
     try {
       location.enableBackgroundMode(enable: true);
-      final locationResult = await location.getLocation();
+      // final locationResult = await location.getLocation();
       setState(() {
-        currentLocation = LatLng(locationResult.latitude!, locationResult.longitude!);
+        // currentLocation = LatLng(locationResult.latitude!, locationResult.longitude!);
         _loadingLocation = false;
       });
       location.onLocationChanged.listen((event) {
@@ -72,11 +72,11 @@ class _MapViewState extends State<MapView>{
                     urlTemplate: 'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
                     userAgentPackageName: 'com.example.app',
                   ),
-                  MarkerLayer(
-                    markers: [
-                      Marker(point: currentLocation, builder:(context) => CircleAvatar())
-                    ],
-                  ),
+                  // MarkerLayer(
+                  //   // markers: [
+                  //   //   Marker(point: currentLocation, builder:(context) => CircleAvatar())
+                  //   // ],
+                  // ),
                 ],
               ),
             ),
